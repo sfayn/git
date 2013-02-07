@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+	<managed-bean>
+		<managed-bean-name>temperatureConvertor</managed-bean-name>
+		<managed-bean-class>controller.TemperatureConvertor</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>index</display-name>
+		<from-view-id>/index.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>guestPage</from-outcome>
+			<to-view-id>/guestPage.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index</display-name>
+		<from-view-id>/index.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>adminPage</from-outcome>
+			<to-view-id>/admin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>LoginView</display-name>
+		<from-view-id>/LoginView.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/Trainer.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>LoginView</display-name>
+		<from-view-id>/LoginView.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>failed</from-outcome>
+			<to-view-id>/FailedLogin.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<validator>
+		<display-name>controller.LoginValidator</display-name>
+		<validator-id>controller.LoginValidator</validator-id>
+		<validator-class>controller.LoginValidator</validator-class>
+	</validator>
+
+</faces-config>
